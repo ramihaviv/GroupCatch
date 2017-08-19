@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
     <html>
       <head>
         <title>Group Catch</title>
@@ -11,7 +11,6 @@
         margin: 0px;
         padding: 0px
       }
-
        .labels {
      color: Yellow;
      background-color: black;
@@ -28,48 +27,10 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false"></script>
     <script src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerwithlabel/1.0.1/src/markerwithlabel.js"></script>
     <script>
-    
-   
-    // onError Callback receives a PositionError object
-    //
-    function onError(error) {
-        alert('code: '    + error.code    + '\n' +
-              'message: ' + error.message + '\n');
-    }
-
-   var on = function(position) {
-        alert('Latitude: '          + position.coords.latitude          + '\n' +
-              'Longitude: '         + position.coords.longitude         + '\n' +
-              'Altitude: '          + position.coords.altitude          + '\n' +
-              'Accuracy: '          + position.coords.accuracy          + '\n' +
-              'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-              'Heading: '           + position.coords.heading           + '\n' +
-              'Speed: '             + position.coords.speed             + '\n' +
-              'Timestamp: '         + position.timestamp                + '\n');
-    };
-     navigator.geolocation.getCurrentPosition(onSuccess, onError);
-    
-    /*var currentLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-    var mapOptions = {
-        zoom: 3,
-        center: currentLocation,
-        mapTypeId: google.maps.MapTypeId.ROADMAP }
-  
-
-  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-
-google.maps.event.addDomListener(window, 'load', initialize); 
-    var location = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-    map.setCenter (location);
-    map.setZoom (9);
-    
-    
-    */
-     /*   var markers = [];
+   /*   var markers = [];
       var map = null;
       var counter =0;
       var counter_part =0;
-
 function initialize() {
     var chicago = new google.maps.LatLng(35.890026,-5.523652);
     var mapOptions = {
@@ -77,11 +38,9 @@ function initialize() {
         center: chicago,
         mapTypeId: google.maps.MapTypeId.ROADMAP 
   }
-
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 }
 google.maps.event.addDomListener(window, 'load', initialize);
-
   $.get('http://nnscc.mydomain.com/gmap/Customers.xml', function(xml) {
       var jsonObj = $.xml2json(xml);
         $.each(jsonObj.Marker, function(){
@@ -102,9 +61,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
           PlaceMarker(lat,lon, image, custname); 
         } 
 });     
-
 function PlaceMarker(lat, lon, image, custname) {
-
      var myLatlng = new google.maps.LatLng(lat,lon);
      var marker = new MarkerWithLabel({
        position: myLatlng,
@@ -116,21 +73,18 @@ function PlaceMarker(lat, lon, image, custname) {
        labelStyle: {opacity: 0.75}
      });
 }
-
 function recenter ()
 {
     var location = new google.maps.LatLng(markers[counter].latitude,markers[counter].longitude);
     map.setCenter (location);
     map.setZoom (9);
 }
-
 function centerback()
 {
     var location = new google.maps.LatLng(35.890026,-5.523652);
     map.setCenter (location);
     map.setZoom (3);
 }
-
 window.setInterval(function(){
   recenter();
   if(counter==(markers.length-1))
@@ -151,11 +105,25 @@ window.setInterval(function(){
             counter++;
             counter_part++;}
   }
-
 }, 15000);
      */
-     
-
+     var onSuccess = function(position) {
+        alert('Latitude: '          + position.coords.latitude          + '\n' +
+              'Longitude: '         + position.coords.longitude         + '\n' +
+              'Altitude: '          + position.coords.altitude          + '\n' +
+              'Accuracy: '          + position.coords.accuracy          + '\n' +
+              'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+              'Heading: '           + position.coords.heading           + '\n' +
+              'Speed: '             + position.coords.speed             + '\n' +
+              'Timestamp: '         + position.timestamp                + '\n');
+    };
+    // onError Callback receives a PositionError object
+    //
+    function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
+    }
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
     </script>
   </head>
   <body>
