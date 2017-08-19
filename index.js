@@ -10,5 +10,5 @@ receivedEvent: function(id) {
   listeningElement.setAttribute('style', 'display:none;');
   receivedElement.setAttribute('style', 'display:block;');
 
-  console.log('Haviv Family ACE Received Event: ' + id);
+  console.log('Received Event: ' + id);
 }
