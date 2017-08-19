@@ -32,7 +32,30 @@
 {
     
 }
-   /*   var markers = [];
+   
+    // onError Callback receives a PositionError object
+    //
+    function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
+    }
+
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    
+    var currentLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+    var mapOptions = {
+        zoom: 3,
+        center: currentLocation,
+        mapTypeId: google.maps.MapTypeId.ROADMAP 
+  
+
+  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+google.maps.event.addDomListener(window, 'load', initialize); 
+    var location = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+    map.setCenter (location);
+    map.setZoom (9);
+     /*   var markers = [];
       var map = null;
       var counter =0;
       var counter_part =0;
@@ -132,28 +155,6 @@ window.setInterval(function(){
               'Timestamp: '         + position.timestamp                + '\n');
     };
 
-    // onError Callback receives a PositionError object
-    //
-    function onError(error) {
-        alert('code: '    + error.code    + '\n' +
-              'message: ' + error.message + '\n');
-    }
-
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
-    function initialize() {
-    var chicago = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-    var mapOptions = {
-        zoom: 3,
-        center: Ashdod,
-        mapTypeId: google.maps.MapTypeId.ROADMAP 
-  }
-
-  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-}
-google.maps.event.addDomListener(window, 'load', initialize); 
-    var location = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-    map.setCenter (location);
-    map.setZoom (9);
     </script>
   </head>
   <body>
