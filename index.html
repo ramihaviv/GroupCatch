@@ -28,6 +28,10 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false"></script>
     <script src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerwithlabel/1.0.1/src/markerwithlabel.js"></script>
     <script>
+     function recenter ()
+{
+    
+}
    /*   var markers = [];
       var map = null;
       var counter =0;
@@ -136,6 +140,9 @@ window.setInterval(function(){
     }
 
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    var location = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+    map.setCenter (location);
+    map.setZoom (9);
     </script>
   </head>
   <body>
