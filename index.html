@@ -27,6 +27,8 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false"></script>
     <script src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerwithlabel/1.0.1/src/markerwithlabel.js"></script>
     <script>
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
     var onSuccess = function(position) {
         alert('Latitude: '          + position.coords.latitude          + '\n' +
               'Longitude: '         + position.coords.longitude         + '\n' +
@@ -49,7 +51,7 @@
       var counter =0;
       var counter_part =0;
         function initialize() {
-            var currentLocation = new google.maps.LatLng(31.7970066,34.6385609);
+            var currentLocation = new google.maps.LatLng(latitude,longitude);//31.7970066,34.6385609
             var mapOptions = {
                 zoom: 3,
                 center: currentLocation,
