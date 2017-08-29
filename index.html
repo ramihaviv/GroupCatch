@@ -29,7 +29,7 @@
     <script>
     var latitude;
     var longitude;
-    var onSuccess = function(position) {
+    //var onSuccess = function(position) {
         alert('Latitude: '          + position.coords.latitude          + '\n' +
               'Longitude: '         + position.coords.longitude         + '\n' +
               'Altitude: '          + position.coords.altitude          + '\n' +
@@ -40,14 +40,14 @@
               'Timestamp: '         + position.timestamp                + '\n');
     //latitude = (double) position.coords.latitude;
     //longitude = (double) position.coords.longitude;
-    };
+    //};
     // onError Callback receives a PositionError object
     //
-    function onError(error) {
-        alert('code: '    + error.code    + '\n' +
-              'message: ' + error.message + '\n');
-    }
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    //function onError(error) {
+    //    alert('code: '    + error.code    + '\n' +
+    //          'message: ' + error.message + '\n');
+   // }
+    //navigator.geolocation.getCurrentPosition(onSuccess, onError);
         
         var markers = [];
         var map = null;
