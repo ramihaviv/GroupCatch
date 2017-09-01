@@ -27,57 +27,36 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false"></script>
     <script src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerwithlabel/1.0.1/src/markerwithlabel.js"></script>
     <script>
-    var latitude;
-    var longitude;
-    //alert('Latitude: '+ position.coords.latitude );   
     var onSuccess = function(position) {
-       alert('Latitude: '          + position.coords.latitude          + '\n' +
+        alert('Latitude: '          + position.coords.latitude          + '\n' +
               'Longitude: '         + position.coords.longitude         + '\n' +
               'Altitude: '          + position.coords.altitude          + '\n' +
               'Accuracy: '          + position.coords.accuracy          + '\n' +
               'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
               'Heading: '           + position.coords.heading           + '\n' +
               'Speed: '             + position.coords.speed             + '\n' +
-              'Timestamp: '         + position.timestamp                + '\n');*/
-    latitude = (double) position.coords.latitude;
-    longitude = (double) position.coords.longitude;
+              'Timestamp: '         + position.timestamp                + '\n');
     };
     // onError Callback receives a PositionError object
     //
     function onError(error) {
-       alert('code: '    + error.code    + '\n' +
-             'message: ' + error.message + '\n');
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
     }
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
-        
-        /*var markers = [];
-        var map = null;
-        var counter =0;
-        var counter_part =0;
+    navigator.geolocation.getCurrentPosition(onSuccess, onError); 
+        var markers = [];
+      var map = null;
+      var counter =0;
+      var counter_part =0;
         function initialize() {
-            var currentLocation = new google.maps.LatLng(31.7970066,34.6385609);// latitude,longitude
+            var currentLocation = new google.maps.LatLng(31.7970066,34.6385609);
             var mapOptions = {
-                zoom: 13,
+                zoom: 16,
                 center: currentLocation,
                 mapTypeId: google.maps.MapTypeId.ROADMAP 
-                var stat = this.status == "Critical" ? 'http://maps.google.com/mapfiles/ms/micons/red-dot.png' : 'http://maps.google.com/mapfiles/ms/micons/green-dot.png';
-                 var mark = {
-                        title: this.title,
-                        latitude: this.latitude,
-                        longitude: this.longitude,
-                        icon: stat
             }
-            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);*/
-           // var myLatlng = new google.maps.LatLng(31.7970066,34.6385609);
-           // var marker = new MarkerWithLabel({
-           //    position: myLatlng,
-           //    map: map,
-           //    icon: 'http://maps.google.com/mapfiles/ms/micons/green-dot.png',
-          //     labelContent: 'Rami Haviv',
-           //    labelAnchor: new google.maps.Point(22, 0),
-          ///     labelClass: "labels", // the CSS class for the label
-          //     labelStyle: {opacity: 0.75}
-          //  }
+             map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        }
     google.maps.event.addDomListener(window, 'load', initialize);
    /*   var markers = [];
       var map = null;
