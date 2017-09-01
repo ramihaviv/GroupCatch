@@ -30,8 +30,8 @@
     var latitude;
     var longitude;
     //alert('Latitude: '+ position.coords.latitude );   
-    //var onSuccess = function(position) {
-   /*     alert('Latitude: '          + position.coords.latitude          + '\n' +
+    var onSuccess = function(position) {
+       alert('Latitude: '          + position.coords.latitude          + '\n' +
               'Longitude: '         + position.coords.longitude         + '\n' +
               'Altitude: '          + position.coords.altitude          + '\n' +
               'Accuracy: '          + position.coords.accuracy          + '\n' +
@@ -39,18 +39,18 @@
               'Heading: '           + position.coords.heading           + '\n' +
               'Speed: '             + position.coords.speed             + '\n' +
               'Timestamp: '         + position.timestamp                + '\n');*/
-    //latitude = (double) position.coords.latitude;
-    //longitude = (double) position.coords.longitude;
-    //};
+    latitude = (double) position.coords.latitude;
+    longitude = (double) position.coords.longitude;
+    };
     // onError Callback receives a PositionError object
     //
-    //function onError(error) {
-    //    alert('code: '    + error.code    + '\n' +
-    //          'message: ' + error.message + '\n');
-   // }
-    //navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    function onError(error) {
+       alert('code: '    + error.code    + '\n' +
+             'message: ' + error.message + '\n');
+    }
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
         
-        var markers = [];
+        /*var markers = [];
         var map = null;
         var counter =0;
         var counter_part =0;
@@ -67,7 +67,7 @@
                         longitude: this.longitude,
                         icon: stat
             }
-            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);*/
            // var myLatlng = new google.maps.LatLng(31.7970066,34.6385609);
            // var marker = new MarkerWithLabel({
            //    position: myLatlng,
